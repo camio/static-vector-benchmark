@@ -1019,6 +1019,14 @@ namespace std
 	            return base_t::data_[base_t::size_++] = i;
 	    }
 
+	    int* try_push_back(int i) {
+		    if(full()) {
+                        return 0;
+		    } else {
+	                return &(base_t::data_[base_t::size_++] = i);
+                    }
+	    }
+
             /// Appends a default constructed `T` at the end of the vector.
             FCV_REQUIRES(fcv_detail::Constructible<T, T>&&
                              fcv_detail::Assignable<reference, T&&>)
