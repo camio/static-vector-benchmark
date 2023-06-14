@@ -2,7 +2,7 @@
 
 CXX:= g++
 CXXFLAGS:= -O3
-CPPFLAGS:= -Iexpected/include `pkg-config --cflags benchmark`
+CPPFLAGS:= -I. `pkg-config --cflags benchmark` -DNDEBUG
 
 all: benchmark
 

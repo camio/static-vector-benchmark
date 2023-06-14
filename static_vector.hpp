@@ -424,7 +424,7 @@ namespace std
                     using pointer         = T*;
                     using const_pointer   = T const*;
 
-                  private:
+                  protected:
                     // If the value_type is const, make a const array of
                     // non-const elements:
                     using data_t = conditional_t<
@@ -774,7 +774,7 @@ namespace std
         /// Dynamically-resizable fixed-capacity vector.
         template <typename T, size_t Capacity>
         struct fixed_capacity_vector
-            : private fcv_detail::storage::_t<T, Capacity>
+            : protected fcv_detail::storage::_t<T, Capacity>
         {
           private:
             static_assert(is_nothrow_destructible_v<T>,
@@ -1006,6 +1006,18 @@ namespace std
                 FCV_EXPECT(!full() && "vector is full!");
                 emplace_back(::std::forward<U>(value));
             }
+
+	    int& push_back_check(int i) {
+		    if(full()) {
+                        throw std::bad_alloc();
+		    } else {
+	                return base_t::data_[base_t::size_++] = i;
+                    }
+	    }
+
+	    int& push_back_unsafe(int i) {
+	            return base_t::data_[base_t::size_++] = i;
+	    }
 
             /// Appends a default constructed `T` at the end of the vector.
             FCV_REQUIRES(fcv_detail::Constructible<T, T>&&
