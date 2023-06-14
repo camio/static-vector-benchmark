@@ -30,7 +30,20 @@ BM_vector/1000000     651827 ns       651795 ns          996 items_per_second=1.
 
 ## The benchmarks
 
-TBD
+These benchmarks measure the speed of proposed `std::static_vector` `push_back`
+variants:
+
+* **push_back_check** If space is not available, throw `std::bad_alloc`,
+  otherwise return a reference to the newly created element.
+* **try_push_back** If space is not available, return 0, otherwise return a
+  pointer to the newly created element.
+* **push_back_unsafe** If space is not available the behavior is undefined,
+  otherwise return a reference to the newly created element.
+
+The "invisible" variants of the test remove the compiler's ability to determine
+that the vector does not change size in the inner loop. The intent is to
+eliminate the compiler's ability to `push_back` multiple values at the same
+time and better measure speeds.
 
 ## MacOS Notes
 
