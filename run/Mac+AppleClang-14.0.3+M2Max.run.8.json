@@ -1,0 +1,154 @@
+{
+  "context": {
+    "date": "2023-06-15T16:07:36+03:00",
+    "host_name": "MacBook-Pro.local",
+    "executable": "./benchmark",
+    "num_cpus": 12,
+    "mhz_per_cpu": 24,
+    "cpu_scaling_enabled": false,
+    "caches": [
+      {
+        "type": "Data",
+        "level": 1,
+        "size": 65536,
+        "num_sharing": 0
+      },
+      {
+        "type": "Instruction",
+        "level": 1,
+        "size": 131072,
+        "num_sharing": 0
+      },
+      {
+        "type": "Unified",
+        "level": 2,
+        "size": 4194304,
+        "num_sharing": 1
+      }
+    ],
+    "load_avg": [5.75586,5.66455,5.15527],
+    "library_build_type": "release"
+  },
+  "benchmarks": [
+    {
+      "name": "BM_vector/1000000",
+      "family_index": 0,
+      "per_family_instance_index": 0,
+      "run_name": "BM_vector/1000000",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1398,
+      "real_time": 2.0249219420717400e+06,
+      "cpu_time": 2.0248268955650933e+06,
+      "time_unit": "ns",
+      "items_per_second": 4.9386937826155144e+08
+    },
+    {
+      "name": "BM_static_vector_push_back_check/1000000",
+      "family_index": 1,
+      "per_family_instance_index": 0,
+      "run_name": "BM_static_vector_push_back_check/1000000",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1848,
+      "real_time": 1.5001056996773621e+06,
+      "cpu_time": 1.5000140692640694e+06,
+      "time_unit": "ns",
+      "items_per_second": 6.6666041371906316e+08
+    },
+    {
+      "name": "BM_static_vector_push_back_unsafe/1000000",
+      "family_index": 2,
+      "per_family_instance_index": 0,
+      "run_name": "BM_static_vector_push_back_unsafe/1000000",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 6784,
+      "real_time": 4.1193133343115752e+05,
+      "cpu_time": 4.1190462853773590e+05,
+      "time_unit": "ns",
+      "items_per_second": 2.4277464507985902e+09
+    },
+    {
+      "name": "BM_static_vector_try_push_back/1000000",
+      "family_index": 3,
+      "per_family_instance_index": 0,
+      "run_name": "BM_static_vector_try_push_back/1000000",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1850,
+      "real_time": 1.5091860810817042e+06,
+      "cpu_time": 1.5090978378378372e+06,
+      "time_unit": "ns",
+      "items_per_second": 6.6264755997049999e+08
+    },
+    {
+      "name": "BM_vector_invisible_size/1000000",
+      "family_index": 4,
+      "per_family_instance_index": 0,
+      "run_name": "BM_vector_invisible_size/1000000",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 2083,
+      "real_time": 1.3582711233777555e+06,
+      "cpu_time": 1.3581958713394133e+06,
+      "time_unit": "ns",
+      "items_per_second": 7.3627082890027416e+08
+    },
+    {
+      "name": "BM_static_vector_push_back_check_invisible_size/1000000",
+      "family_index": 5,
+      "per_family_instance_index": 0,
+      "run_name": "BM_static_vector_push_back_check_invisible_size/1000000",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 3105,
+      "real_time": 9.0311803542311490e+05,
+      "cpu_time": 9.0309210950080503e+05,
+      "time_unit": "ns",
+      "items_per_second": 1.1073067624882274e+09
+    },
+    {
+      "name": "BM_static_vector_push_back_unsafe_invisible_size/1000000",
+      "family_index": 6,
+      "per_family_instance_index": 0,
+      "run_name": "BM_static_vector_push_back_unsafe_invisible_size/1000000",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 3102,
+      "real_time": 9.0418201966727898e+05,
+      "cpu_time": 9.0413958736299165e+05,
+      "time_unit": "ns",
+      "items_per_second": 1.1060239082292528e+09
+    },
+    {
+      "name": "BM_static_vector_try_push_back_invisible_size/1000000",
+      "family_index": 7,
+      "per_family_instance_index": 0,
+      "run_name": "BM_static_vector_try_push_back_invisible_size/1000000",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 3105,
+      "real_time": 9.0301131239856756e+05,
+      "cpu_time": 9.0297165861513873e+05,
+      "time_unit": "ns",
+      "items_per_second": 1.1074544704245434e+09
+    }
+  ]
+}
