@@ -22,6 +22,7 @@ void BM_vector(benchmark::State& state) {
         {
 	  v.push_back(b[i]);
         }
+	f(&v);
         benchmark::DoNotOptimize(r += v.size());
     }
     state.SetItemsProcessed(N*state.iterations());
@@ -42,6 +43,7 @@ void BM_static_vector(benchmark::State& state) {
         {
 	  v.push_back(b[i]);
         }
+	f(&v);
         benchmark::DoNotOptimize(r += v.size());
     }
     state.SetItemsProcessed(N*state.iterations());
@@ -62,6 +64,7 @@ void BM_static_vector_push_back_check(benchmark::State& state) {
         {
 	  v.push_back_check(b[i]);
         }
+	f(&v);
         benchmark::DoNotOptimize(r += v.size());
     }
     state.SetItemsProcessed(N*state.iterations());
@@ -82,6 +85,7 @@ void BM_static_vector_push_back_unsafe(benchmark::State& state) {
         {
 	  v.push_back_unsafe(b[i]);
         }
+	f(&v);
         benchmark::DoNotOptimize(r += v.size());
     }
     state.SetItemsProcessed(N*state.iterations());
@@ -102,6 +106,7 @@ void BM_static_vector_try_push_back(benchmark::State& state) {
         {
 	  v.try_push_back(b[i]);
         }
+	f(&v);
         benchmark::DoNotOptimize(r += v.size());
     }
     state.SetItemsProcessed(N*state.iterations());
