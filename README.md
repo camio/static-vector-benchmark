@@ -45,6 +45,12 @@ that the vector does not change size in the inner loop. The intent is to
 eliminate the compiler's ability to `push_back` multiple values at the same
 time and better measure speeds.
 
+## Scripts
+
+There are several scripts in the [scripts directory](scripts) that can be used
+to run the benchmark multiple times, collate the output into a more useful
+form, and create graphs.
+
 ## MacOS Notes
 
 Install dependencies
@@ -52,6 +58,8 @@ Install dependencies
 ```bsh
 brew install google-benchmark
 brew install pkg-config
+brew install gnuplot
+brew install jq
 ```
 
 To build using the stock clang compiler, build like this:
