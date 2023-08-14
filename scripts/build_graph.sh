@@ -61,16 +61,17 @@ scripts/collate.sh --prefix ${PREFIX} | \
   | map(.object)
 
   # Create CSV
+  | del(.[] | select(.test_name | startswith("vector" ) )) # Exclude unrelevant std::vector comparisons
   | .[]
   | .test_name as $test_name
   | (.test_name |
-      if   startswith("static_vector_push_back_check_invisible_size") then "T1 static\\\\_vector push\\\\_back"
-      elif startswith("static_vector_push_back_unsafe_invisible_size") then "T1 static\\\\_vector unsafe\\\\_push\\\\_back"
-      elif startswith("static_vector_try_push_back_invisible_size") then "T1 static\\\\_vector try\\\\_push\\\\_back"
+      if   startswith("static_vector_push_back_check_invisible_size") then "T1 push\\\\_back"
+      elif startswith("static_vector_push_back_unsafe_invisible_size") then "T1 unchecked\\\\_push\\\\_back"
+      elif startswith("static_vector_try_push_back_invisible_size") then "T1 try\\\\_push\\\\_back"
       elif startswith("vector_invisible_size") then "T1 vector push\\\\_back"
-      elif startswith("static_vector_push_back_check") then "T2 static\\\\_vector push\\\\_back"
-      elif startswith("static_vector_push_back_unsafe") then "T2 static\\\\_vector unsafe\\\\_push\\\\_back"
-      elif startswith("static_vector_try_push_back") then "T2 static\\\\_vector try\\\\_push\\\\_back"
+      elif startswith("static_vector_push_back_check") then "T2 push\\\\_back"
+      elif startswith("static_vector_push_back_unsafe") then "T2 unchecked\\\\_push\\\\_back"
+      elif startswith("static_vector_try_push_back") then "T2 try\\\\_push\\\\_back"
       elif startswith("vector") then "T2 vector push\\\\_back"
       else . end
     ) as $test_name
