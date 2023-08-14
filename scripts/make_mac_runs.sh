@@ -6,6 +6,6 @@
 
 make clean
 make CXX="clang++ -std=c++20"
-./scripts/multirun.sh --prefix Mac+AppleClang-14.0.3+M2Max
+./scripts/multirun.sh --prefix Mac+AppleClang-14.0.0+M2Max
 
 # sudo cpupower frequency-set -g schedutil
